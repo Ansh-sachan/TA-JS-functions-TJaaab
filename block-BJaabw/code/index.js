@@ -11,11 +11,12 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(min) {
+ let sec = 60 * min;
+ return sec;
 }
 // - Execute the function with required parameter
-
+minToSec(12);
 /* 2. 
 Create a function named isInRange which validates whether a number n is exclusively within the bounds of lower and upper.
 Return true and false based on that.
@@ -26,11 +27,15 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower,upper,number) {
+  if(number>lower || upper>number){
+    return false
+  } else {
+    return true
+  }
 }
 // - Execute the function with required parameter
-
+isInRange(10,19,30)
 /* 2. calculateBMI
 
 
@@ -49,10 +54,19 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight,height) {
+ let bmi = weight / (height * height)
+ if (18.5 > bmi){
+  return `Underweight`
+ } else if(bmi>18.5 && 24.9>bmi){
+  return ` Normal weight`
+ }else if(bmi>25 && 29.9>bmi){
+  return `Overweight`
+ }else if(bmi>30){
+  return `Obese`
+ }
 }
-
+calculateBMI(49,2.1)
 /* 3. appropiateDrinks
 
 Create a function that take the age are return the appropiate drink based on these conditions:
@@ -64,9 +78,19 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  if(14>age){
+    return `drink fruit juice`
+  }else if (age>14 && age<18){
+    return `drink soda`
+  }else if (age>18 && age<21){
+    return `drink fruit-flavoured beer`
+  }else if(age>21){
+    return `drink throat-piercing soda`
+  }
 }
+
+appropiateDrinks(17)
 
 /* 4. Add two numers or string
 
@@ -79,8 +103,14 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(input1,input2) {
+  if(typeof input1 === "number" && typeof input2 === "number"){
+    return +input1 + +input2
+  }else if(typeof input1 === "string" && typeof input2 === "string"){
+    return input1 + " " + input2
+  }else{
+    return `enter valid values`
+  }
 }
 
 // Function Test
