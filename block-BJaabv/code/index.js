@@ -132,10 +132,13 @@ function sumOfN(n) {
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 */
 
-function min() {
-  // Your code goes here
+function min(a,b) {
+ if(a>b){
+  return `${b} is smaller`
+ } else {
+  return `${a} is smaller`
+ }
 }
-
 min(0, 10);
 min(0, -10);
 
@@ -143,6 +146,7 @@ min(0, -10);
 9. 🎖Write a JavaScript function which accepts an argument and returns the type of the value.
 */
 
-function typeCheck() {
-  // Your code goes here
+function typeCheck(value) {
+  return typeof value;
 }
+typeCheck(3)
